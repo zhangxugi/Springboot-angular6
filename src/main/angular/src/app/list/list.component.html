@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>名字</th>
+    <th>姓氏</th>
+    <th>性别</th>
+    <th>生日</th>
+    <th>部门</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let emp of employees">
+      <td class="text-center"> {{emp.employeeId}}</td>
+      <td class="text-center"> {{emp.firstName}}</td>
+      <td class="text-center"> {{emp.lastName}}</td>
+      <td class="text-center"> {{emp.gender}}</td>
+      <td class="text-center"> {{emp.dob}}</td>
+      <td class="text-center"> {{emp.department}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(emp)">Delete</button>
+        <button class="btn btn-primary" (click)="updateUser(emp)">Edit</button></td>
+
+    </tr>
+    </tbody>
+  </table>
+  <td><button class="btn btn-primary" (click)="newUser()">New User</button></td>
+
+</div>

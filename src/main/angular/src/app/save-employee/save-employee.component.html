@@ -1,0 +1,30 @@
+<div class="container">
+  <form (ngSubmit)="processForm()">
+   <!-- <div class="form group">
+      <label for="employeeId">ID</label>
+      <input type="text" name="employeeId" class="form-control" [(ngModel)]="employee.employeeId">
+    </div>-->
+    <div class="form group">
+      <label for="firstName">名字</label>
+      <input type="text" id ="firstName" name="firstName" class="form-control" [(ngModel)]="employee.firstName">
+    </div>
+    <div class="form group">
+      <label for="lastName">姓氏</label>
+      <input type="text" id ="lastName"name="lastName" class="form-control" [(ngModel)]="employee.lastName">
+    </div>
+    <div class="form group">
+      <label for="gender">性别</label>
+      <input type="text" id="gender" name="gender" class="form-control" [(ngModel)]="employee.gender">
+    </div>
+    <div class="form group">
+      <label for="dob">生日</label>
+      <input type="text" id="dob" name="dob" class="form-control" [(ngModel)]="employee.dob">
+    </div>
+    <div class="form group">
+      <label for="department">部门</label>
+      <input type="text" id="department" name="department" class="form-control" [(ngModel)]="employee.department">
+    </div>
+    <input type="submit" value="save" class="btn btn-success">
+
+  </form>
+</div>
