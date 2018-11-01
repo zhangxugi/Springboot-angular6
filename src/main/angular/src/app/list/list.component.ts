@@ -40,7 +40,10 @@ export class ListComponent implements OnInit {
     this._employeeService.setter(employ);
     this._router.navigate(['/op']);
   }
-
+//导出
+  daochu(){
+    location.href="http://localhost:8080/api/UserExcelDownloads";
+  }
 }
 
 

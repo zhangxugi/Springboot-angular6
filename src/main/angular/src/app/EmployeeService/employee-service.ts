@@ -3,8 +3,6 @@ import {Http,Response,Headers,RequestOptions} from '@angular/http';
 import {catchError,map} from "rxjs/operators";
 import {Observable} from  'rxjs';
 import {Employee} from "../employee";
-import {HttpClient} from "selenium-webdriver/http";
-import {HttpHeaders} from "@angular/common/http";
 @Injectable()
 export class EmployeeService {
   private baseUrl:String='http://localhost:8080/api';
