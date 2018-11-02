@@ -10,6 +10,7 @@ import {SaveEmployeeComponent} from "./save-employee/save-employee.component";
 import { LoginsComponent } from './logins/logins.component';
 import {AuthService} from "./logins/auth.service";
 import { HeroesComponent } from './heroes/heroes.component';
+import { FileUploadModule } from 'ng2-file-upload';
 //配置路由
 const appRoutes:Routes=[
  {path:'',component:LoginsComponent},
@@ -35,6 +36,7 @@ const appRoutes:Routes=[
     BrowserModule,
     HttpModule,
     FormsModule,
+    FileUploadModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [EmployeeService,AuthService],

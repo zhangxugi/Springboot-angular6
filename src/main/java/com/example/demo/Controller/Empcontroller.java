@@ -124,16 +124,17 @@ private EmployeeService employeeService;
 
         //导入
 
-        @RequestMapping("Excelfile")
+        @RequestMapping("/Excelfile")
 
         public  String upload(MultipartFile file, HttpServletRequest request) {
+        System.out.println(file+"www");
             try {
                 List<Employee> typeLists = new ArrayList<Employee>();
 
                 System.out.println("开始");
                 //使用POI解析Excel文件
                 //如果是xls，使用HSSFWorkbook；2003年的excel  如果是xlsx，使用XSSFWorkbook  2007年excel
-                HSSFWorkbook workbook = new HSSFWorkbook(file.getInputStream());
+                    HSSFWorkbook workbook = new HSSFWorkbook(file.getInputStream());
                 //根据名称获得指定Sheet对象
                 HSSFSheet hssfSheet = workbook.getSheetAt(0);
                 for (Row row : hssfSheet) {
@@ -182,7 +183,7 @@ private EmployeeService employeeService;
             }catch(Exception e){
                 e.printStackTrace();
             }
-            return "导入成功";
+            return "成功";
         }
 
 }

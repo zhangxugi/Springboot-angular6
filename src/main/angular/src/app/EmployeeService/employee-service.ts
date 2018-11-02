@@ -39,6 +39,9 @@ export class EmployeeService {
     pipe(map((response:Response)=>response.json()),catchError(this.errorHandler));
 
   }
+  Excelfile(file:any){
+    return this._http.post(this.baseUrl+'/Excelfile',file,this.options).pipe(map((response:Response) => response.json()));
+  }
 
   errorHandler(error:Response){
     return Observable.throw(error||"SERVER ERROR");

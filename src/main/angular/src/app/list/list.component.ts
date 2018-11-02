@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {EmployeeService} from "../EmployeeService/employee-service";
 import {Employee} from "../employee";
-
+import {FileUploader} from "ng2-file-upload";
+const URL = 'http://localhost:8080/api/Excelfile';
 
 @Component({
   selector: 'app-list',
@@ -11,9 +12,16 @@ import {Employee} from "../employee";
 })
 export class ListComponent implements OnInit {
   private employees:Employee[];
+  uploader: FileUploader = new FileUploader({ url: URL, itemAlias: 'file'});
+  isSaving: boolean;
   constructor(private _employeeService:EmployeeService, private _router:Router) { }
 
   ngOnInit() {
+    //向队列中添加一个单独的文件后触发
+    this.uploader.onAfterAddingFile = file => {
+      file.withCredentials = false;
+
+    };
     this._employeeService.getUsers().subscribe((employees)=>{
       console.log(employees);
       this.employees=employees;
@@ -44,6 +52,7 @@ export class ListComponent implements OnInit {
   daochu(){
     location.href="http://localhost:8080/api/UserExcelDownloads";
   }
+
 }
 
 
